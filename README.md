@@ -1,6 +1,6 @@
 # KokuMusic Website
 
-This is my personal music website where you will be able to find all the music I've worked on so far available for free listenning and download (in format .mp3 .wav and .flac)
+This is my personal music website where you will be able to find all the music I've worked on so far available for free listening and download (in format .mp3 .wav and .flac)
 
 ## [SoundCloud](https://soundcloud.com/user-468292636)
 
