@@ -1,4 +1,4 @@
-<%- include("partials/head", {title: "Koku Music"}); %>
+<%- include("partials/head", {title: "Koku Music", tab:"home"}); %>
 
 <h1>
 	Koku Music
@@ -17,36 +17,23 @@
 
 	Donec commodo ipsum sit amet orci pellentesque ullamcorper. Nam quis blandit felis. Aliquam interdum euismod orci, non ultrices turpis luctus sed. Maecenas id fringilla purus. Etiam sed tristique est. Nullam at leo purus. Nulla in vulputate dui. 
 </p>
-<p> Table Header</p>
-<table>
-    <thead>
-        <tr>
-            <th></th>
-            <th>Date</th>
-            <th>Title</th>
-            <th>Album</th>
-            <th>Style</th>
-            <th>Download</th>
-        </tr>
-    </thead>
-    <tbody>
-    <% for (const music of musics) { -%>
-        <tr>
-            <th>Play Button</th>
-            <th><%= music.release %></th>
-            <th><a href="<%= music.video_url %>"><%= music.title %></a></th>
-            <th><%= music.album %></th>
-            <th><%= music.style %></th>
-            <th>
-                <ul>
-                    <li><a href="<%= '../ressources/mp3/'+music.file_name+'.mp3' %>" download>mp3</a></li>
-                    <li><a href="<%= '../ressources/mp3/'+music.file_name+'.flac' %>" download>flac</a></li>
-                    <li><a href="<%= '../ressources/mp3/'+music.file_name+'.wav' %>" download>wav</a></li>
-                </ul>
-            </th>
-        </tr>
-    <% } -%>
-    </tbody>
-</table>
 
+<ul class="musics">
+<% for (const music of musics) { %>
+<li class="music">
+    <div class="music-info">
+        <button class="music-button">Play</button>
+        <h2 class="music-title"><a href="<%= music.video_url %>"><%= music.title %></a></h2>
+        <time class="music-release"><%= music.release %></time>
+        <!-- <th><%= music.album %></th> -->
+        <span class="music-style"><%= music.style %></span>
+    </div>
+    <ul class="music-download">
+        <li><a href="<%= '../ressources/mp3/'+music.file_name+'.mp3' %>" download>mp3</a></li>
+        <li><a href="<%= '../ressources/mp3/'+music.file_name+'.flac' %>" download>flac</a></li>
+        <li><a href="<%= '../ressources/mp3/'+music.file_name+'.wav' %>" download>wav</a></li>
+    </ul>
+</li>
+<% } %>
+</ul>
 <%- include("partials/footer"); %>

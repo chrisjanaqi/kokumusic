@@ -14,6 +14,12 @@
 <header>
     <img src="/icons/logo.png" alt="Logo"/>
     <nav>
-        Navigation toolbar here
+        <% if (tab === "home") { %>
+            <a href="/home" class="selected">Home</a>
+            <a href="/about">About</a>
+        <% } else if (tab === "about") { %> 
+            <a href="/home">Home</a>
+            <a href="/about" class="selected">About</a>
+        <% } %>
     </nav>
 </header>
